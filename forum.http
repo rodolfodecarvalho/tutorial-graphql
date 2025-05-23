@@ -1,0 +1,59 @@
+###
+GRAPHQL http://localhost:8080/graphql
+
+mutation {
+    createPost(
+        content: "Meu primeiro Post 5"
+    ) {
+        id,
+        content
+    }
+}
+
+###
+GRAPHQL http://localhost:8080/graphql
+
+mutation {
+    createComment(
+        content: "Meu comentário post 5"
+        postId: "109ab2f2-cc1d-4ce0-9cee-bb29167986da"
+    ) {
+        id,
+        content,
+        postId
+    }
+}
+
+###
+GRAPHQL http://localhost:8080/graphql
+
+query {
+    getPostById(
+        id: "109ab2f2-cc1d-4ce0-9cee-bb29167986da"
+    ) {
+        id,
+        content
+        comments {
+            id,
+            content,
+            postId
+        }
+    }
+}
+
+###
+GRAPHQL http://localhost:8080/graphql
+
+query {
+    getPostById(
+        id: "109ab2f2-cc1d-4ce0-9cee-bb29167986da"
+    ) {
+        id,
+        content
+        comments {
+            id,
+            content,
+            postId
+        }
+    }
+}
